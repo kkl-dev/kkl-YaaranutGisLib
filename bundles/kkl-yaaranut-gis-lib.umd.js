@@ -358,6 +358,14 @@
         return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
+    //import WebMap from "@arcgis/core/WebMap";
+    //import MapView from "@arcgis/core/views/MapView";
+    //import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+    //import Basemap from "@arcgis/core/Basemap";
+    //import LabelClass from "@arcgis/core/layers/support/LabelClass";
+    //import { SimpleFillSymbol, SimpleLineSymbol, TextSymbol } from '@arcgis/core/symbols';
+    //import Color from '@arcgis/core/Color';
+    //import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
     var WorkUnitComponent = /** @class */ (function () {
         //public featerLayer: FeatureLayer = new FeatureLayer();
         //public mapView = new MapView();
