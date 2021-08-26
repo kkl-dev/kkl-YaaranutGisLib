@@ -1,8 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core));
-}(this, (function (exports, i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer')) :
+    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer));
+}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer) { 'use strict';
+
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -25,6 +27,13 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var WebMap__default = /*#__PURE__*/_interopDefaultLegacy(WebMap);
+    var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
+    var FeatureLayer__default = /*#__PURE__*/_interopDefaultLegacy(FeatureLayer);
+    var Basemap__default = /*#__PURE__*/_interopDefaultLegacy(Basemap);
+    var LabelClass__default = /*#__PURE__*/_interopDefaultLegacy(LabelClass);
+    var Color__default = /*#__PURE__*/_interopDefaultLegacy(Color);
+    var SimpleRenderer__default = /*#__PURE__*/_interopDefaultLegacy(SimpleRenderer);
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
@@ -358,20 +367,12 @@
         return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
-    //import WebMap from "@arcgis/core/WebMap";
-    //import MapView from "@arcgis/core/views/MapView";
-    //import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
-    //import Basemap from "@arcgis/core/Basemap";
-    //import LabelClass from "@arcgis/core/layers/support/LabelClass";
-    //import { SimpleFillSymbol, SimpleLineSymbol, TextSymbol } from '@arcgis/core/symbols';
-    //import Color from '@arcgis/core/Color';
-    //import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
     var WorkUnitComponent = /** @class */ (function () {
-        //public featerLayer: FeatureLayer = new FeatureLayer();
-        //public mapView = new MapView();
         function WorkUnitComponent() {
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
+            this.featerLayer = new FeatureLayer__default['default']();
+            this.mapView = new MapView__default['default']();
         }
         Object.defineProperty(WorkUnitComponent.prototype, "content", {
             set: function (content) {
@@ -387,31 +388,72 @@
                 return this._workUnits;
             },
             set: function (workUnits) {
+                var _this = this;
                 this._workUnits = workUnits;
                 var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).join();
-                /*WorkUnitsWhere*/
-                //this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
-                //this.featerLayer.when(
-                //  () => {
-                //    const query = this.featerLayer.createQuery();
-                //    query.outSpatialReference = this.mapView.spatialReference;
-                //    this.featerLayer.queryFeatures().then(response => {
-                //      response.features.forEach(feature => {
-                //        const axzz = "Dfgd";
-                //      });
-                //    });
-                //    this.featerLayer.queryExtent(query)
-                //      .then(response => {
-                //        if (response.extent !== null) this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
-                //      });
-                //  });
+                WorkUnitsWhere;
+                this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+                this.featerLayer.when(function () {
+                    var query = _this.featerLayer.createQuery();
+                    query.outSpatialReference = _this.mapView.spatialReference;
+                    _this.featerLayer.queryFeatures().then(function (response) {
+                        response.features.forEach(function (feature) {
+                            var axzz = "Dfgd";
+                        });
+                    });
+                    _this.featerLayer.queryExtent(query)
+                        .then(function (response) {
+                        if (response.extent !== null)
+                            _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                    });
+                });
             },
             enumerable: false,
             configurable: true
         });
         WorkUnitComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
+                var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
                 return __generator(this, function (_a) {
+                    webMap = new WebMap__default['default']({
+                        basemap: "topo",
+                        //portalItem: {
+                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
+                        //  id: "streets"
+                        //}
+                    });
+                    basemap = new Basemap__default['default']({
+                        portalItem: {
+                            //url:""
+                            id: "streets" // WGS84 Streets Vector webmap
+                        }
+                    });
+                    try {
+                        this.featerLayer = new FeatureLayer__default['default']({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
+                        this.featerLayer.opacity = 0.5;
+                        this.featerLayer.definitionExpression = "1=2";
+                        featerRenderer = new SimpleRenderer__default['default']();
+                        featerRenderer.label = "{FOR_NO}";
+                        polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
+                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
+                        polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
+                        polygonsSimpleFillSymbol.outline.width = 2;
+                        featerRenderer.symbol = polygonsSimpleFillSymbol;
+                        labelClass = new LabelClass__default['default']();
+                        labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                        this.featerLayer.labelingInfo = [labelClass];
+                        this.featerLayer.renderer = featerRenderer;
+                        webMap.add(this.featerLayer);
+                        this.mapView.container = this.mapViewEl.nativeElement;
+                        this.mapView.map = webMap;
+                        //(await mapView.whenLayerView(featerLayer)).filter.where = "GlobalID = '" + this._filter[0] + "'";
+                        //mapView.when(() => {
+                        //  this.mapLoaded.emit(true);
+                        //});
+                    }
+                    catch (error) {
+                        alert('We have an error: ' + error);
+                    }
                     return [2 /*return*/];
                 });
             });
@@ -422,12 +464,12 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "kkl-workUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "aaa\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  zzz", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "kkl-workUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "aaaa\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  zzzz", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'kkl-workUnit',
-                        template: "aaa\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  zzz",
+                        template: "aaaa\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  zzzz",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{

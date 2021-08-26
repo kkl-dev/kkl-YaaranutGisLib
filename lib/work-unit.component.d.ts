@@ -1,4 +1,6 @@
 import { ElementRef, EventEmitter, OnInit } from '@angular/core';
+import MapView from "@arcgis/core/views/MapView";
+import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import * as i0 from "@angular/core";
 export declare class WorkUnitComponent implements OnInit {
     set content(content: ElementRef);
@@ -7,6 +9,8 @@ export declare class WorkUnitComponent implements OnInit {
     private _workUnits;
     set workUnits(workUnits: string[]);
     get workUnits(): string[];
+    featerLayer: FeatureLayer;
+    mapView: MapView;
     constructor();
     initializeMap(): Promise<void>;
     ngOnInit(): void;
