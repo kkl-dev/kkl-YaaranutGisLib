@@ -37,22 +37,22 @@ class WorkUnitComponent {
     set workUnits(workUnits) {
         this._workUnits = workUnits;
         const WorkUnitsWhere = workUnits.map(workUnit => "'" + workUnit + "'").join();
-        WorkUnitsWhere;
-        this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
-        this.featerLayer.when(() => {
-            const query = this.featerLayer.createQuery();
-            query.outSpatialReference = this.mapView.spatialReference;
-            this.featerLayer.queryFeatures().then(response => {
-                response.features.forEach(feature => {
-                    const axzz = "Dfgd";
-                });
-            });
-            this.featerLayer.queryExtent(query)
-                .then(response => {
-                if (response.extent !== null)
-                    this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
-            });
-        });
+        //WorkUnitsWhere
+        //this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+        //this.featerLayer.when(
+        //  () => {
+        //    const query = this.featerLayer.createQuery();
+        //    query.outSpatialReference = this.mapView.spatialReference;
+        //    this.featerLayer.queryFeatures().then(response => {
+        //      response.features.forEach(feature => {
+        //        const axzz = "Dfgd";
+        //      });
+        //    });
+        //    this.featerLayer.queryExtent(query)
+        //      .then(response => {
+        //        if (response.extent !== null) this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+        //      });
+        //  });
     }
     get workUnits() {
         return this._workUnits;
@@ -106,7 +106,7 @@ class WorkUnitComponent {
         });
     }
     ngOnInit() {
-        this.initializeMap();
+        // this.initializeMap();
     }
 }
 WorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });

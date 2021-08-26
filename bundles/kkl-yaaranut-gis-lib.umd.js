@@ -388,25 +388,24 @@
                 return this._workUnits;
             },
             set: function (workUnits) {
-                var _this = this;
                 this._workUnits = workUnits;
                 var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).join();
-                WorkUnitsWhere;
-                this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
-                this.featerLayer.when(function () {
-                    var query = _this.featerLayer.createQuery();
-                    query.outSpatialReference = _this.mapView.spatialReference;
-                    _this.featerLayer.queryFeatures().then(function (response) {
-                        response.features.forEach(function (feature) {
-                            var axzz = "Dfgd";
-                        });
-                    });
-                    _this.featerLayer.queryExtent(query)
-                        .then(function (response) {
-                        if (response.extent !== null)
-                            _this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
-                    });
-                });
+                //WorkUnitsWhere
+                //this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
+                //this.featerLayer.when(
+                //  () => {
+                //    const query = this.featerLayer.createQuery();
+                //    query.outSpatialReference = this.mapView.spatialReference;
+                //    this.featerLayer.queryFeatures().then(response => {
+                //      response.features.forEach(feature => {
+                //        const axzz = "Dfgd";
+                //      });
+                //    });
+                //    this.featerLayer.queryExtent(query)
+                //      .then(response => {
+                //        if (response.extent !== null) this.mapView.goTo(response.extent).catch(function (error) { console.error(error); });
+                //      });
+                //  });
             },
             enumerable: false,
             configurable: true
@@ -459,7 +458,7 @@
             });
         };
         WorkUnitComponent.prototype.ngOnInit = function () {
-            this.initializeMap();
+            // this.initializeMap();
         };
         return WorkUnitComponent;
     }());
