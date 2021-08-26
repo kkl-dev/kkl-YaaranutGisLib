@@ -1,5 +1,5 @@
 {
-  "name": "work-unit",
+  "name": "kkl-yaaranut-gis-lib",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
@@ -8,11 +8,11 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "main": "bundles/work-unit.umd.js",
-  "module": "fesm2015/work-unit.js",
-  "es2015": "fesm2015/work-unit.js",
-  "esm2015": "esm2015/work-unit.js",
-  "fesm2015": "fesm2015/work-unit.js",
-  "typings": "work-unit.d.ts",
+  "main": "bundles/kkl-yaaranut-gis-lib.umd.js",
+  "module": "fesm2015/kkl-yaaranut-gis-lib.js",
+  "es2015": "fesm2015/kkl-yaaranut-gis-lib.js",
+  "esm2015": "esm2015/kkl-yaaranut-gis-lib.js",
+  "fesm2015": "fesm2015/kkl-yaaranut-gis-lib.js",
+  "typings": "kkl-yaaranut-gis-lib.d.ts",
   "sideEffects": false
 }
