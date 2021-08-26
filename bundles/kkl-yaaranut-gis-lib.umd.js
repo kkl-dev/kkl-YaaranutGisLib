@@ -1,10 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer')) :
-    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer));
-}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer) { 'use strict';
-
-    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core));
+}(this, (function (exports, i0) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -27,13 +25,6 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
-    var WebMap__default = /*#__PURE__*/_interopDefaultLegacy(WebMap);
-    var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
-    var FeatureLayer__default = /*#__PURE__*/_interopDefaultLegacy(FeatureLayer);
-    var Basemap__default = /*#__PURE__*/_interopDefaultLegacy(Basemap);
-    var LabelClass__default = /*#__PURE__*/_interopDefaultLegacy(LabelClass);
-    var Color__default = /*#__PURE__*/_interopDefaultLegacy(Color);
-    var SimpleRenderer__default = /*#__PURE__*/_interopDefaultLegacy(SimpleRenderer);
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
@@ -368,11 +359,11 @@
     }
 
     var WorkUnitComponent = /** @class */ (function () {
+        //public featerLayer: FeatureLayer = new FeatureLayer();
+        //public mapView = new MapView();
         function WorkUnitComponent() {
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
-            this.featerLayer = new FeatureLayer__default['default']();
-            this.mapView = new MapView__default['default']();
         }
         Object.defineProperty(WorkUnitComponent.prototype, "content", {
             set: function (content) {
@@ -412,53 +403,13 @@
         });
         WorkUnitComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
-                var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
                 return __generator(this, function (_a) {
-                    webMap = new WebMap__default['default']({
-                        basemap: "topo",
-                        //portalItem: {
-                        //  //url:"https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/JNFILForest/FeatureServer/0/query"
-                        //  id: "streets"
-                        //}
-                    });
-                    basemap = new Basemap__default['default']({
-                        portalItem: {
-                            //url:""
-                            id: "streets" // WGS84 Streets Vector webmap
-                        }
-                    });
-                    try {
-                        this.featerLayer = new FeatureLayer__default['default']({ url: "https://services2.arcgis.com/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
-                        this.featerLayer.opacity = 0.5;
-                        this.featerLayer.definitionExpression = "1=2";
-                        featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{FOR_NO}";
-                        polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
-                        polygonsSimpleFillSymbol.color = Color__default['default'].fromString("gold");
-                        polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
-                        polygonsSimpleFillSymbol.outline.width = 2;
-                        featerRenderer.symbol = polygonsSimpleFillSymbol;
-                        labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
-                        this.featerLayer.labelingInfo = [labelClass];
-                        this.featerLayer.renderer = featerRenderer;
-                        webMap.add(this.featerLayer);
-                        this.mapView.container = this.mapViewEl.nativeElement;
-                        this.mapView.map = webMap;
-                        //(await mapView.whenLayerView(featerLayer)).filter.where = "GlobalID = '" + this._filter[0] + "'";
-                        //mapView.when(() => {
-                        //  this.mapLoaded.emit(true);
-                        //});
-                    }
-                    catch (error) {
-                        alert('We have an error: ' + error);
-                    }
                     return [2 /*return*/];
                 });
             });
         };
         WorkUnitComponent.prototype.ngOnInit = function () {
-            // this.initializeMap();
+            this.initializeMap();
         };
         return WorkUnitComponent;
     }());
