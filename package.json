@@ -6,8 +6,7 @@
     "@angular/core": "^12.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
-    "@arcgis/core": "^4.20.2"
+    "tslib": "^2.3.0"
   },
   "main": "bundles/kkl-yaaranut-gis-lib.umd.js",
   "module": "fesm2015/kkl-yaaranut-gis-lib.js",
