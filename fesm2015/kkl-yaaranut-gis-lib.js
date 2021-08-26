@@ -14,7 +14,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 }]
         }], ctorParameters: function () { return []; } });
 
-//import WebMap from "@arcgis/core/WebMap";
 //import MapView from "@arcgis/core/views/MapView";
 //import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 //import Basemap from "@arcgis/core/Basemap";

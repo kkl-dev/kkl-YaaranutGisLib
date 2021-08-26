@@ -358,7 +358,6 @@
         return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
-    //import WebMap from "@arcgis/core/WebMap";
     //import MapView from "@arcgis/core/views/MapView";
     //import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
     //import Basemap from "@arcgis/core/Basemap";
