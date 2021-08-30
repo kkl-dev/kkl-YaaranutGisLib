@@ -495,6 +495,9 @@
                         declarations: [
                             WorkUnitComponent
                         ],
+                        schemas: [
+                            i0.CUSTOM_ELEMENTS_SCHEMA
+                        ],
                         imports: [],
                         exports: [
                             WorkUnitComponent

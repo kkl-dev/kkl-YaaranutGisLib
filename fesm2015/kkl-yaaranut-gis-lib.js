@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule } from '@angular/core';
+import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { __awaiter } from 'tslib';
 import WebMap from '@arcgis/core/WebMap';
 import MapView from '@arcgis/core/views/MapView';
@@ -141,6 +141,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
             args: [{
                     declarations: [
                         WorkUnitComponent
+                    ],
+                    schemas: [
+                        CUSTOM_ELEMENTS_SCHEMA
                     ],
                     imports: [],
                     exports: [
