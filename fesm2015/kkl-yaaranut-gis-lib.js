@@ -1,8 +1,6 @@
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { __awaiter } from 'tslib';
-import MapView from '@arcgis/core/views/MapView';
-import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 
 class WorkUnitService {
     constructor() { }
@@ -17,11 +15,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
         }], ctorParameters: function () { return []; } });
 
 class WorkUnitComponent {
+    //public featerLayer: FeatureLayer = new FeatureLayer();
+    //public mapView = new MapView();
     constructor() {
         this.mapLoaded = new EventEmitter();
         this._workUnits = [];
-        this.featerLayer = new FeatureLayer();
-        this.mapView = new MapView();
     }
     set content(content) {
         if (content) {

@@ -1,10 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer')) :
-    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core, global.MapView, global.FeatureLayer));
-}(this, (function (exports, i0, MapView, FeatureLayer) { 'use strict';
-
-    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('kkl-yaaranut-gis-lib', ['exports', '@angular/core'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['kkl-yaaranut-gis-lib'] = {}, global.ng.core));
+}(this, (function (exports, i0) { 'use strict';
 
     function _interopNamespace(e) {
         if (e && e.__esModule) return e;
@@ -27,8 +25,6 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
-    var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
-    var FeatureLayer__default = /*#__PURE__*/_interopDefaultLegacy(FeatureLayer);
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
@@ -363,11 +359,11 @@
     }
 
     var WorkUnitComponent = /** @class */ (function () {
+        //public featerLayer: FeatureLayer = new FeatureLayer();
+        //public mapView = new MapView();
         function WorkUnitComponent() {
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
-            this.featerLayer = new FeatureLayer__default['default']();
-            this.mapView = new MapView__default['default']();
         }
         Object.defineProperty(WorkUnitComponent.prototype, "content", {
             set: function (content) {
