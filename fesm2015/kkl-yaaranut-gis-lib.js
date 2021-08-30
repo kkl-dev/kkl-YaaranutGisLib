@@ -14,6 +14,14 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 }]
         }], ctorParameters: function () { return []; } });
 
+//import WebMap from "@arcgis/core/WebMap";
+//import MapView from "@arcgis/core/views/MapView";
+//import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+//import Basemap from "@arcgis/core/Basemap";
+//import LabelClass from "@arcgis/core/layers/support/LabelClass";
+//import { SimpleFillSymbol, SimpleLineSymbol, TextSymbol } from '@arcgis/core/symbols';
+//import Color from '@arcgis/core/Color';
+//import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
 class WorkUnitComponent {
     //public featerLayer: FeatureLayer = new FeatureLayer();
     //public mapView = new MapView();
