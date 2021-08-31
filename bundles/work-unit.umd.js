@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer')) :
-    typeof define === 'function' && define.amd ? define('work-unit', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['work-unit'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer));
-}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define('work-unit', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['work-unit'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms));
+}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -371,14 +371,27 @@
         function WorkUnitComponent() {
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
+            this._z = "z";
             this.featerLayer = new FeatureLayer__default['default']();
             this.mapView = new MapView__default['default']();
+            this.objectId = "3453";
         }
         Object.defineProperty(WorkUnitComponent.prototype, "content", {
             set: function (content) {
                 if (content) {
                     this.mapViewEl = content;
                 }
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(WorkUnitComponent.prototype, "zz", {
+            get: function () {
+                return this._z;
+            },
+            set: function (zzz) {
+                var azzzzzz = this.objectId;
+                this._z = zzz;
             },
             enumerable: false,
             configurable: true
@@ -390,8 +403,8 @@
             set: function (workUnits) {
                 var _this = this;
                 this._workUnits = workUnits;
-                var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).join();
-                WorkUnitsWhere;
+                var WorkUnitsWhere = workUnits.map(function (workUnit) { return "'" + workUnit + "'"; }).
+                    join();
                 this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
                 this.featerLayer.when(function () {
                     var query = _this.featerLayer.createQuery();
@@ -411,6 +424,9 @@
             enumerable: false,
             configurable: true
         });
+        WorkUnitComponent.prototype.setworkUnits = function (workUnits) {
+            this.workUnits = workUnits;
+        };
         WorkUnitComponent.prototype.initializeMap = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var webMap, basemap, featerRenderer, polygonsSimpleFillSymbol, labelClass;
@@ -464,12 +480,12 @@
         return WorkUnitComponent;
     }());
     WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "kkl-workUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  ", isInline: true });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ", isInline: true });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
-                        selector: 'kkl-workUnit',
-                        template: "\n    <div #mapViewNode style=\"background-color:yellow\"></div>\n  ",
+                        selector: 'lib-workUnit',
+                        template: "\n  aaaa12345678\n  <div #mapViewNode style=\"width:400px;height: 400px;background-color:yellow\"></div>\nzzzz\n  ",
                         styles: []
                     }]
             }], ctorParameters: function () { return []; }, propDecorators: { content: [{
@@ -477,6 +493,10 @@
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
+                }], objectId: [{
+                    type: i0.Input
+                }], zz: [{
+                    type: i0.Input
                 }], workUnits: [{
                     type: i0.Input
                 }] } });
@@ -484,21 +504,31 @@
     var WorkUnitModule = /** @class */ (function () {
         function WorkUnitModule() {
         }
+        WorkUnitModule.prototype.set123 = function () {
+        };
         return WorkUnitModule;
     }());
     WorkUnitModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
-    WorkUnitModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, declarations: [WorkUnitComponent], exports: [WorkUnitComponent] });
-    WorkUnitModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, imports: [[]] });
+    WorkUnitModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [forms.FormsModule,
+            platformBrowser.BrowserModule], exports: [WorkUnitComponent] });
+    WorkUnitModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, imports: [[
+                forms.FormsModule,
+                platformBrowser.BrowserModule
+            ]] });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, decorators: [{
                 type: i0.NgModule,
                 args: [{
                         declarations: [
                             WorkUnitComponent
                         ],
-                        imports: [],
+                        imports: [
+                            forms.FormsModule,
+                            platformBrowser.BrowserModule
+                        ],
                         exports: [
                             WorkUnitComponent
-                        ]
+                        ],
+                        schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
             }] });
 

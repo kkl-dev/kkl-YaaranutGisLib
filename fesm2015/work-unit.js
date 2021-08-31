@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule } from '@angular/core';
+import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { __awaiter } from 'tslib';
 import WebMap from '@arcgis/core/WebMap';
 import MapView from '@arcgis/core/views/MapView';
@@ -9,6 +9,8 @@ import LabelClass from '@arcgis/core/layers/support/LabelClass';
 import { SimpleFillSymbol } from '@arcgis/core/symbols';
 import Color from '@arcgis/core/Color';
 import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 class WorkUnitService {
     constructor() { }
@@ -26,18 +28,27 @@ class WorkUnitComponent {
     constructor() {
         this.mapLoaded = new EventEmitter();
         this._workUnits = [];
+        this._z = "z";
         this.featerLayer = new FeatureLayer();
         this.mapView = new MapView();
+        this.objectId = "3453";
     }
     set content(content) {
         if (content) {
             this.mapViewEl = content;
         }
     }
+    set zz(zzz) {
+        var azzzzzz = this.objectId;
+        this._z = zzz;
+    }
+    get zz() {
+        return this._z;
+    }
     set workUnits(workUnits) {
         this._workUnits = workUnits;
-        const WorkUnitsWhere = workUnits.map(workUnit => "'" + workUnit + "'").join();
-        WorkUnitsWhere;
+        const WorkUnitsWhere = workUnits.map(workUnit => "'" + workUnit + "'").
+            join();
         this.featerLayer.definitionExpression = "GlobalID in (" + WorkUnitsWhere + ")";
         this.featerLayer.when(() => {
             const query = this.featerLayer.createQuery();
@@ -56,6 +67,9 @@ class WorkUnitComponent {
     }
     get workUnits() {
         return this._workUnits;
+    }
+    setworkUnits(workUnits) {
+        this.workUnits = workUnits;
     }
     initializeMap() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -110,15 +124,19 @@ class WorkUnitComponent {
     }
 }
 WorkUnitComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "kkl-workUnit", inputs: { workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
-    <div #mapViewNode style="background-color:yellow"></div>
+WorkUnitComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "lib-workUnit", inputs: { objectId: "objectId", zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0, template: `
+  aaaa12345678
+  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
+zzzz
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitComponent, decorators: [{
             type: Component,
             args: [{
-                    selector: 'kkl-workUnit',
+                    selector: 'lib-workUnit',
                     template: `
-    <div #mapViewNode style="background-color:yellow"></div>
+  aaaa12345678
+  <div #mapViewNode style="width:400px;height: 400px;background-color:yellow"></div>
+zzzz
   `,
                     styles: []
                 }]
@@ -127,25 +145,39 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                 args: ['mapViewNode', { static: true }]
             }], mapLoaded: [{
                 type: Output
+            }], objectId: [{
+                type: Input
+            }], zz: [{
+                type: Input
             }], workUnits: [{
                 type: Input
             }] } });
 
 class WorkUnitModule {
+    set123() {
+    }
 }
 WorkUnitModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-WorkUnitModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, declarations: [WorkUnitComponent], exports: [WorkUnitComponent] });
-WorkUnitModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, imports: [[]] });
+WorkUnitModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [FormsModule,
+        BrowserModule], exports: [WorkUnitComponent] });
+WorkUnitModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, imports: [[
+            FormsModule,
+            BrowserModule
+        ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
                         WorkUnitComponent
                     ],
-                    imports: [],
+                    imports: [
+                        FormsModule,
+                        BrowserModule
+                    ],
                     exports: [
                         WorkUnitComponent
-                    ]
+                    ],
+                    schemas: [CUSTOM_ELEMENTS_SCHEMA]
                 }]
         }] });
 
