@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiUrl: 'http://localhost:27552',
+    apiUrl: 'http://loc----alhost:27552',
 };
 /*
  * For easier debugging in development mode, you can import the following file
