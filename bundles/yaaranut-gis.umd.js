@@ -58,29 +58,25 @@
         }
         return YaaranutService;
     }());
-    YaaranutService.ɵfac = function YaaranutService_Factory(t) { return new (t || YaaranutService)(); };
-    YaaranutService.ɵprov = /*@__PURE__*/ i0__namespace.ɵɵdefineInjectable({ token: YaaranutService, factory: YaaranutService.ɵfac });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(YaaranutService, [{
+    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
                 type: i0.Injectable
-            }], function () { return []; }, null);
-    })();
+            }], ctorParameters: function () { return []; } });
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
         }
         return WorkUnitService;
     }());
-    WorkUnitService.ɵfac = function WorkUnitService_Factory(t) { return new (t || WorkUnitService)(); };
-    WorkUnitService.ɵprov = /*@__PURE__*/ i0__namespace.ɵɵdefineInjectable({ token: WorkUnitService, factory: WorkUnitService.ɵfac, providedIn: 'root' });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(WorkUnitService, [{
+    WorkUnitService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    WorkUnitService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitService, providedIn: 'root' });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitService, decorators: [{
                 type: i0.Injectable,
                 args: [{
                         providedIn: 'root'
                     }]
-            }], function () { return []; }, null);
-    })();
+            }], ctorParameters: function () { return []; } });
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -400,7 +396,6 @@
         return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
     }
 
-    var _c0$1 = ["mapViewNode"];
     var WorkUnitComponent = /** @class */ (function () {
         function WorkUnitComponent(ys) {
             this.ys = ys;
@@ -524,29 +519,16 @@
         };
         return WorkUnitComponent;
     }());
-    WorkUnitComponent.ɵfac = function WorkUnitComponent_Factory(t) { return new (t || WorkUnitComponent)(i0__namespace.ɵɵdirectiveInject(YaaranutService)); };
-    WorkUnitComponent.ɵcmp = /*@__PURE__*/ i0__namespace.ɵɵdefineComponent({ type: WorkUnitComponent, selectors: [["YaaranutGis-workUnit"]], viewQuery: function WorkUnitComponent_Query(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵviewQuery(_c0$1, 7);
-            }
-            if (rf & 2) {
-                var _t = void 0;
-                i0__namespace.ɵɵqueryRefresh(_t = i0__namespace.ɵɵloadQuery()) && (ctx.content = _t.first);
-            }
-        }, inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, decls: 2, vars: 0, consts: [[2, "width", "100%", "height", "100%", "background-color", "yellow"], ["mapViewNode", ""]], template: function WorkUnitComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵelement(0, "div", 0, 1);
-            }
-        }, encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(WorkUnitComponent, [{
+    WorkUnitComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
+    WorkUnitComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: WorkUnitComponent, selector: "YaaranutGis-workUnit", inputs: { zz: "zz", workUnits: "workUnits" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewNode"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ", isInline: true });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'YaaranutGis-workUnit',
                         template: "\n  <div #mapViewNode style=\"width:100%;height: 100%;background-color:yellow\"></div>\n  ",
                         styles: []
                     }]
-            }], function () { return [{ type: YaaranutService }]; }, { content: [{
+            }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                     type: i0.ViewChild,
                     args: ['mapViewNode', { static: true }]
                 }], mapLoaded: [{
@@ -555,22 +537,21 @@
                     type: i0.Input
                 }], workUnits: [{
                     type: i0.Input
-                }] });
-    })();
+                }] } });
 
     var WorkUnitModule = /** @class */ (function () {
         function WorkUnitModule() {
         }
         return WorkUnitModule;
     }());
-    WorkUnitModule.ɵfac = function WorkUnitModule_Factory(t) { return new (t || WorkUnitModule)(); };
-    WorkUnitModule.ɵmod = /*@__PURE__*/ i0__namespace.ɵɵdefineNgModule({ type: WorkUnitModule });
-    WorkUnitModule.ɵinj = /*@__PURE__*/ i0__namespace.ɵɵdefineInjector({ imports: [[
+    WorkUnitModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
+    WorkUnitModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [forms.FormsModule,
+            platformBrowser.BrowserModule], exports: [WorkUnitComponent] });
+    WorkUnitModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, imports: [[
                 forms.FormsModule,
                 platformBrowser.BrowserModule
             ]] });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(WorkUnitModule, [{
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: WorkUnitModule, decorators: [{
                 type: i0.NgModule,
                 args: [{
                         declarations: [
@@ -585,30 +566,22 @@
                         ],
                         schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
-            }], null, null);
-    })();
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(WorkUnitModule, { declarations: [WorkUnitComponent], imports: [forms.FormsModule,
-                platformBrowser.BrowserModule], exports: [WorkUnitComponent] });
-    })();
+            }] });
 
     var SeedsCollectService = /** @class */ (function () {
         function SeedsCollectService() {
         }
         return SeedsCollectService;
     }());
-    SeedsCollectService.ɵfac = function SeedsCollectService_Factory(t) { return new (t || SeedsCollectService)(); };
-    SeedsCollectService.ɵprov = /*@__PURE__*/ i0__namespace.ɵɵdefineInjectable({ token: SeedsCollectService, factory: SeedsCollectService.ɵfac, providedIn: 'root' });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(SeedsCollectService, [{
+    SeedsCollectService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    SeedsCollectService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, providedIn: 'root' });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectService, decorators: [{
                 type: i0.Injectable,
                 args: [{
                         providedIn: 'root'
                     }]
-            }], function () { return []; }, null);
-    })();
+            }], ctorParameters: function () { return []; } });
 
-    var _c0 = ["mapViewSeedsCollect"];
     var SeedsCollectComponent = /** @class */ (function () {
         function SeedsCollectComponent(ys) {
             this.ys = ys;
@@ -721,51 +694,37 @@
         };
         return SeedsCollectComponent;
     }());
-    SeedsCollectComponent.ɵfac = function SeedsCollectComponent_Factory(t) { return new (t || SeedsCollectComponent)(i0__namespace.ɵɵdirectiveInject(YaaranutService)); };
-    SeedsCollectComponent.ɵcmp = /*@__PURE__*/ i0__namespace.ɵɵdefineComponent({ type: SeedsCollectComponent, selectors: [["YaaranutGis-SeedsCollect"]], viewQuery: function SeedsCollectComponent_Query(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵviewQuery(_c0, 7);
-            }
-            if (rf & 2) {
-                var _t = void 0;
-                i0__namespace.ɵɵqueryRefresh(_t = i0__namespace.ɵɵloadQuery()) && (ctx.content = _t.first);
-            }
-        }, inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, decls: 2, vars: 0, consts: [[2, "width", "100%", "height", "100%", "background-color", "green"], ["mapViewSeedsCollect", ""]], template: function SeedsCollectComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0__namespace.ɵɵelement(0, "div", 0, 1);
-            }
-        }, encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(SeedsCollectComponent, [{
+    SeedsCollectComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, deps: [{ token: YaaranutService }], target: i0__namespace.ɵɵFactoryTarget.Component });
+    SeedsCollectComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: SeedsCollectComponent, selector: "YaaranutGis-SeedsCollect", inputs: { seedsCollects: "seedsCollects" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewSeedsCollect"], descendants: true, static: true }], ngImport: i0__namespace, template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ", isInline: true });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectComponent, decorators: [{
                 type: i0.Component,
                 args: [{
                         selector: 'YaaranutGis-SeedsCollect',
                         template: "\n    <div #mapViewSeedsCollect style=\"width:100%;height: 100%;background-color:green\"></div>\n  ",
                         styles: []
                     }]
-            }], function () { return [{ type: YaaranutService }]; }, { content: [{
+            }], ctorParameters: function () { return [{ type: YaaranutService }]; }, propDecorators: { content: [{
                     type: i0.ViewChild,
                     args: ['mapViewSeedsCollect', { static: true }]
                 }], mapLoaded: [{
                     type: i0.Output
                 }], seedsCollects: [{
                     type: i0.Input
-                }] });
-    })();
+                }] } });
 
     var SeedsCollectModule = /** @class */ (function () {
         function SeedsCollectModule() {
         }
         return SeedsCollectModule;
     }());
-    SeedsCollectModule.ɵfac = function SeedsCollectModule_Factory(t) { return new (t || SeedsCollectModule)(); };
-    SeedsCollectModule.ɵmod = /*@__PURE__*/ i0__namespace.ɵɵdefineNgModule({ type: SeedsCollectModule });
-    SeedsCollectModule.ɵinj = /*@__PURE__*/ i0__namespace.ɵɵdefineInjector({ imports: [[
+    SeedsCollectModule.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, deps: [], target: i0__namespace.ɵɵFactoryTarget.NgModule });
+    SeedsCollectModule.ɵmod = i0__namespace.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, declarations: [SeedsCollectComponent], imports: [forms.FormsModule,
+            platformBrowser.BrowserModule], exports: [SeedsCollectComponent] });
+    SeedsCollectModule.ɵinj = i0__namespace.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, imports: [[
                 forms.FormsModule,
                 platformBrowser.BrowserModule
             ]] });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0__namespace.ɵsetClassMetadata(SeedsCollectModule, [{
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: SeedsCollectModule, decorators: [{
                 type: i0.NgModule,
                 args: [{
                         declarations: [
@@ -780,12 +739,7 @@
                         ],
                         schemas: [i0.CUSTOM_ELEMENTS_SCHEMA]
                     }]
-            }], null, null);
-    })();
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0__namespace.ɵɵsetNgModuleScope(SeedsCollectModule, { declarations: [SeedsCollectComponent], imports: [forms.FormsModule,
-                platformBrowser.BrowserModule], exports: [SeedsCollectComponent] });
-    })();
+            }] });
 
     /*
      * Public API Surface of work-unit

@@ -5,4 +5,3 @@ export declare class YaaranutService {
     static ɵfac: i0.ɵɵFactoryDeclaration<YaaranutService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<YaaranutService>;
 }
-//# sourceMappingURL=yaaranut.service.d.ts.map

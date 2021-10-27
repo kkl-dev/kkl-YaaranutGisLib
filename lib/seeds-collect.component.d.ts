@@ -20,4 +20,3 @@ export declare class SeedsCollectComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<SeedsCollectComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SeedsCollectComponent, "YaaranutGis-SeedsCollect", never, { "seedsCollects": "seedsCollects"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
-//# sourceMappingURL=seeds-collect.component.d.ts.map

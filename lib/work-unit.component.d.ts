@@ -23,4 +23,3 @@ export declare class WorkUnitComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<WorkUnitComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WorkUnitComponent, "YaaranutGis-workUnit", never, { "zz": "zz"; "workUnits": "workUnits"; }, { "mapLoaded": "mapLoaded"; }, never, never>;
 }
-//# sourceMappingURL=work-unit.component.d.ts.map

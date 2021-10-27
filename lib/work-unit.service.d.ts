@@ -4,4 +4,3 @@ export declare class WorkUnitService {
     static ɵfac: i0.ɵɵFactoryDeclaration<WorkUnitService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WorkUnitService>;
 }
-//# sourceMappingURL=work-unit.service.d.ts.map

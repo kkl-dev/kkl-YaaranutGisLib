@@ -7,4 +7,3 @@ export declare class SeedsCollectModule {
     static ɵmod: i0.ɵɵNgModuleDeclaration<SeedsCollectModule, [typeof i1.SeedsCollectComponent], [typeof i2.FormsModule, typeof i3.BrowserModule], [typeof i1.SeedsCollectComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<SeedsCollectModule>;
 }
-//# sourceMappingURL=seeds-collect.module.d.ts.map

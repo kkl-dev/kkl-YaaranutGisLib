@@ -4,4 +4,3 @@ export declare class SeedsCollectService {
     static ɵfac: i0.ɵɵFactoryDeclaration<SeedsCollectService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SeedsCollectService>;
 }
-//# sourceMappingURL=seeds-collect.service.d.ts.map
