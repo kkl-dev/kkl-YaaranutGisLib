@@ -4,30 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { WorkUnitComponent } from './work-unit.component';
 import * as i0 from "@angular/core";
 export class WorkUnitModule {
-    set123() {
-    }
 }
-WorkUnitModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-WorkUnitModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [FormsModule,
-        BrowserModule], exports: [WorkUnitComponent] });
-WorkUnitModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, imports: [[
+WorkUnitModule.ɵfac = function WorkUnitModule_Factory(t) { return new (t || WorkUnitModule)(); };
+WorkUnitModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: WorkUnitModule });
+WorkUnitModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [[
             FormsModule,
             BrowserModule
         ]] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, decorators: [{
-            type: NgModule,
-            args: [{
-                    declarations: [
-                        WorkUnitComponent
-                    ],
-                    imports: [
-                        FormsModule,
-                        BrowserModule
-                    ],
-                    exports: [
-                        WorkUnitComponent
-                    ],
-                    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-                }]
-        }] });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29yay11bml0Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL3dvcmstdW5pdC9zcmMvbGliL3dvcmstdW5pdC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLHNCQUFzQixFQUFFLFFBQVEsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUNqRSxPQUFPLEVBQUUsYUFBYSxFQUFFLE1BQU0sMkJBQTJCLENBQUM7QUFDMUQsT0FBTyxFQUFFLFdBQVcsRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBRTdDLE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxNQUFNLHVCQUF1QixDQUFDOztBQWlCMUQsTUFBTSxPQUFPLGNBQWM7SUFDbEIsTUFBTTtJQUdiLENBQUM7OzJHQUpVLGNBQWM7NEdBQWQsY0FBYyxpQkFYdkIsaUJBQWlCLGFBR2pCLFdBQVc7UUFDWCxhQUFhLGFBR2IsaUJBQWlCOzRHQUlSLGNBQWMsWUFUaEI7WUFDUCxXQUFXO1lBQ1gsYUFBYTtTQUNkOzJGQU1VLGNBQWM7a0JBYjFCLFFBQVE7bUJBQUM7b0JBQ1IsWUFBWSxFQUFFO3dCQUNaLGlCQUFpQjtxQkFDbEI7b0JBQ0QsT0FBTyxFQUFFO3dCQUNQLFdBQVc7d0JBQ1gsYUFBYTtxQkFDZDtvQkFDRCxPQUFPLEVBQUU7d0JBQ1AsaUJBQWlCO3FCQUNsQjtvQkFDRCxPQUFPLEVBQUUsQ0FBRSxzQkFBc0IsQ0FBRTtpQkFDcEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDVVNUT01fRUxFTUVOVFNfU0NIRU1BLCBOZ01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgQnJvd3Nlck1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXInO1xuaW1wb3J0IHsgRm9ybXNNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9mb3Jtcyc7XG5cbmltcG9ydCB7IFdvcmtVbml0Q29tcG9uZW50IH0gZnJvbSAnLi93b3JrLXVuaXQuY29tcG9uZW50JztcblxuXG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW1xuICAgIFdvcmtVbml0Q29tcG9uZW50XG4gIF0sXG4gIGltcG9ydHM6IFtcbiAgICBGb3Jtc01vZHVsZSxcbiAgICBCcm93c2VyTW9kdWxlXG4gIF0sICAgICAgICAgXG4gIGV4cG9ydHM6IFtcbiAgICBXb3JrVW5pdENvbXBvbmVudFxuICBdLFxuICBzY2hlbWFzOiBbIENVU1RPTV9FTEVNRU5UU19TQ0hFTUEgXVxufSlcbmV4cG9ydCBjbGFzcyBXb3JrVW5pdE1vZHVsZSB7IFxuICBwdWJsaWMgc2V0MTIzKClcbiAge1xuXG4gIH1cbn1cbiJdfQ==
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(WorkUnitModule, [{
+        type: NgModule,
+        args: [{
+                declarations: [
+                    WorkUnitComponent
+                ],
+                imports: [
+                    FormsModule,
+                    BrowserModule
+                ],
+                exports: [
+                    WorkUnitComponent
+                ],
+                schemas: [CUSTOM_ELEMENTS_SCHEMA]
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(WorkUnitModule, { declarations: [WorkUnitComponent], imports: [FormsModule,
+        BrowserModule], exports: [WorkUnitComponent] }); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29yay11bml0Lm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL0xpYnJhcnlzL3NyYy9saWIvd29yay11bml0Lm1vZHVsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsc0JBQXNCLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ2pFLE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSwyQkFBMkIsQ0FBQztBQUMxRCxPQUFPLEVBQUUsV0FBVyxFQUFFLE1BQU0sZ0JBQWdCLENBQUM7QUFFN0MsT0FBTyxFQUFFLGlCQUFpQixFQUFFLE1BQU0sdUJBQXVCLENBQUM7O0FBaUIxRCxNQUFNLE9BQU8sY0FBYzs7NEVBQWQsY0FBYztnRUFBZCxjQUFjO29FQVRoQjtZQUNQLFdBQVc7WUFDWCxhQUFhO1NBQ2Q7dUZBTVUsY0FBYztjQWIxQixRQUFRO2VBQUM7Z0JBQ1IsWUFBWSxFQUFFO29CQUNaLGlCQUFpQjtpQkFDbEI7Z0JBQ0QsT0FBTyxFQUFFO29CQUNQLFdBQVc7b0JBQ1gsYUFBYTtpQkFDZDtnQkFDRCxPQUFPLEVBQUU7b0JBQ1AsaUJBQWlCO2lCQUNsQjtnQkFDRCxPQUFPLEVBQUUsQ0FBRSxzQkFBc0IsQ0FBRTthQUNwQzs7d0ZBQ1ksY0FBYyxtQkFYdkIsaUJBQWlCLGFBR2pCLFdBQVc7UUFDWCxhQUFhLGFBR2IsaUJBQWlCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ1VTVE9NX0VMRU1FTlRTX1NDSEVNQSwgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEJyb3dzZXJNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9wbGF0Zm9ybS1icm93c2VyJztcbmltcG9ydCB7IEZvcm1zTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvZm9ybXMnO1xuXG5pbXBvcnQgeyBXb3JrVW5pdENvbXBvbmVudCB9IGZyb20gJy4vd29yay11bml0LmNvbXBvbmVudCc7XG5cblxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtcbiAgICBXb3JrVW5pdENvbXBvbmVudFxuICBdLFxuICBpbXBvcnRzOiBbXG4gICAgRm9ybXNNb2R1bGUsXG4gICAgQnJvd3Nlck1vZHVsZVxuICBdLCAgICAgICAgIFxuICBleHBvcnRzOiBbXG4gICAgV29ya1VuaXRDb21wb25lbnRcbiAgXSxcbiAgc2NoZW1hczogWyBDVVNUT01fRUxFTUVOVFNfU0NIRU1BIF1cbn0pXG5leHBvcnQgY2xhc3MgV29ya1VuaXRNb2R1bGUgeyBcbiAgXG59XG4iXX0=
