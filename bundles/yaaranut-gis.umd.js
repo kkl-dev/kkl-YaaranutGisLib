@@ -59,7 +59,7 @@
 
     var environmentProd = {
         production: true,
-        apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+        apiUrl: 'http://localhost:27552' //https://kkl-yaaranutgisapi.azurewebsites.net',
     };
 
     var YaaranutService = /** @class */ (function () {
@@ -687,6 +687,7 @@
                         this.featerLayer = new FeatureLayer__default['default']({
                             url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0"
                         });
+                        alert(this.featerLayer.url);
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
