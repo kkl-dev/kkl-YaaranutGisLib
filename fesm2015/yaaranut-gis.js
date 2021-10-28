@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiUrl: 'http://loc----alhost:27552',
+    apiUrl: 'http://localhost:27552',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -36,7 +36,7 @@ const environmentTest = {
 
 const environmentProd = {
     production: true,
-    apiUrl: 'http://localhost:211116652',
+    apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
 };
 
 class YaaranutService {
