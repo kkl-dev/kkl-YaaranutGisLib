@@ -43,15 +43,13 @@ class YaaranutService {
     constructor(testBed) {
         this.apiUrl = "";
         if (isDevMode()) {
-            alert("isDevMode");
             this.apiUrl = environment.apiUrl;
+            this.apiUrl = environmentTest.apiUrl;
         }
         else if (testBed !== null) {
-            alert("testBed");
             this.apiUrl = environmentTest.apiUrl;
         }
         else {
-            alert("Prod");
             this.apiUrl = environmentProd.apiUrl;
         }
     }
