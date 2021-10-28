@@ -147,8 +147,7 @@ class WorkUnitComponent {
             try {
                 // this.featerLayer = new FeatureLayer({ url: "http://localhost:27552/utNNrmXb4IZOLXXs/ArcGIS/rest/services/Test_KKLForestManagementUnits/FeatureServer/0/query" });
                 this.featerLayer = new FeatureLayer({
-                    //url: this.ys.apiUrl + "/ArcGIS/rest/services/KKLForestManagementUnits/FeatureServer/0"
-                    url: ""
+                    url: this.ys.apiUrl + "/ArcGIS/rest/services/KKLForestManagementUnits/FeatureServer/0"
                 });
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=2";
@@ -315,7 +314,6 @@ class SeedsCollectComponent {
                 this.featerLayer = new FeatureLayer({
                     url: this.ys.apiUrl + "/ArcGIS/rest/services/SeedCollect2021/FeatureServer/0/"
                 });
-                alert(this.featerLayer.url);
                 this.featerLayer.opacity = 0.5;
                 this.featerLayer.definitionExpression = "1=2";
                 //this.featerLayer.displayField = "FOR_NO";
