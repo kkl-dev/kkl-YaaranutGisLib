@@ -1,5 +1,6 @@
 import * as i0 from '@angular/core';
-import { Injectable, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { isDevMode, Injectable, Optional, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import * as i1 from '@angular/core/testing';
 import { __awaiter } from 'tslib';
 import WebMap from '@arcgis/core/WebMap';
 import MapView from '@arcgis/core/views/MapView';
@@ -28,17 +29,37 @@ const environment = {
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
+const environmentTest = {
+    production: false,
+    apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+};
+
+const environmentProd = {
+    production: true,
+    apiUrl: 'http://localhost:211116652',
+};
+
 class YaaranutService {
-    constructor() {
+    constructor(testBed) {
         this.apiUrl = "";
-        this.apiUrl = environment.apiUrl;
+        if (isDevMode()) {
+            this.apiUrl = environment.apiUrl;
+        }
+        else if (testBed !== null) {
+            this.apiUrl = environmentTest.apiUrl;
+        }
+        else {
+            this.apiUrl = environmentProd.apiUrl;
+        }
     }
 }
-YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, deps: [{ token: i1.TestBed, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
 YaaranutService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: YaaranutService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return []; } });
+        }], ctorParameters: function () { return [{ type: i1.TestBed, decorators: [{
+                    type: Optional
+                }] }]; } });
 
 class WorkUnitService {
     constructor() { }

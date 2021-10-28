@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms));
-}(this, (function (exports, i0, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/core/testing'), require('@arcgis/core/WebMap'), require('@arcgis/core/views/MapView'), require('@arcgis/core/layers/FeatureLayer'), require('@arcgis/core/Basemap'), require('@arcgis/core/layers/support/LabelClass'), require('@arcgis/core/symbols'), require('@arcgis/core/Color'), require('@arcgis/core/renderers/SimpleRenderer'), require('@angular/platform-browser'), require('@angular/forms')) :
+    typeof define === 'function' && define.amd ? define('yaaranut-gis', ['exports', '@angular/core', '@angular/core/testing', '@arcgis/core/WebMap', '@arcgis/core/views/MapView', '@arcgis/core/layers/FeatureLayer', '@arcgis/core/Basemap', '@arcgis/core/layers/support/LabelClass', '@arcgis/core/symbols', '@arcgis/core/Color', '@arcgis/core/renderers/SimpleRenderer', '@angular/platform-browser', '@angular/forms'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['yaaranut-gis'] = {}, global.ng.core, global.ng.core.testing, global.WebMap, global.MapView, global.FeatureLayer, global.Basemap, global.LabelClass, global.symbols, global.Color, global.SimpleRenderer, global.ng.platformBrowser, global.ng.forms));
+}(this, (function (exports, i0, i1, WebMap, MapView, FeatureLayer, Basemap, LabelClass, symbols, Color, SimpleRenderer, platformBrowser, forms) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -27,6 +27,7 @@
     }
 
     var i0__namespace = /*#__PURE__*/_interopNamespace(i0);
+    var i1__namespace = /*#__PURE__*/_interopNamespace(i1);
     var WebMap__default = /*#__PURE__*/_interopDefaultLegacy(WebMap);
     var MapView__default = /*#__PURE__*/_interopDefaultLegacy(MapView);
     var FeatureLayer__default = /*#__PURE__*/_interopDefaultLegacy(FeatureLayer);
@@ -51,18 +52,40 @@
      */
     // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
+    var environmentTest = {
+        production: false,
+        apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+    };
+
+    var environmentProd = {
+        production: true,
+        apiUrl: 'http://localhost:211116652',
+    };
+
     var YaaranutService = /** @class */ (function () {
-        function YaaranutService() {
+        function YaaranutService(testBed) {
             this.apiUrl = "";
-            this.apiUrl = environment.apiUrl;
+            if (i0.isDevMode()) {
+                this.apiUrl = environment.apiUrl;
+            }
+            else if (testBed !== null) {
+                this.apiUrl = environmentTest.apiUrl;
+            }
+            else {
+                this.apiUrl = environmentProd.apiUrl;
+            }
         }
         return YaaranutService;
     }());
-    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [], target: i0__namespace.ɵɵFactoryTarget.Injectable });
+    YaaranutService.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, deps: [{ token: i1__namespace.TestBed, optional: true }], target: i0__namespace.ɵɵFactoryTarget.Injectable });
     YaaranutService.ɵprov = i0__namespace.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService });
     i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0__namespace, type: YaaranutService, decorators: [{
                 type: i0.Injectable
-            }], ctorParameters: function () { return []; } });
+            }], ctorParameters: function () {
+            return [{ type: i1__namespace.TestBed, decorators: [{
+                            type: i0.Optional
+                        }] }];
+        } });
 
     var WorkUnitService = /** @class */ (function () {
         function WorkUnitService() {
