@@ -10,8 +10,9 @@ import LabelClass from '@arcgis/core/layers/support/LabelClass';
 import { SimpleFillSymbol } from '@arcgis/core/symbols';
 import Color from '@arcgis/core/Color';
 import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -212,10 +213,12 @@ class WorkUnitModule {
 }
 WorkUnitModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 WorkUnitModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [FormsModule,
-        BrowserModule], exports: [WorkUnitComponent] });
+        //BrowserModule
+        CommonModule], exports: [WorkUnitComponent] });
 WorkUnitModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, imports: [[
             FormsModule,
-            BrowserModule
+            //BrowserModule
+            CommonModule
         ]] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: WorkUnitModule, decorators: [{
             type: NgModule,
@@ -225,7 +228,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImpor
                     ],
                     imports: [
                         FormsModule,
-                        BrowserModule
+                        //BrowserModule
+                        CommonModule
                     ],
                     exports: [
                         WorkUnitComponent
