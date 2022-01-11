@@ -159,7 +159,7 @@ class WorkUnitComponent {
                 const featerRenderer = new SimpleRenderer();
                 featerRenderer.label = "{FOR_NO}";
                 const polygonsSimpleFillSymbol = new SimpleFillSymbol();
-                polygonsSimpleFillSymbol.color = Color.fromString("gold");
+                polygonsSimpleFillSymbol.color = Color.fromString("green");
                 polygonsSimpleFillSymbol.outline.color = Color.fromString("blue");
                 polygonsSimpleFillSymbol.outline.width = 2;
                 featerRenderer.symbol = polygonsSimpleFillSymbol;
@@ -496,14 +496,14 @@ class ForestryTendersComponent {
 }
 ForestryTendersComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, deps: [{ token: YaaranutService }], target: i0.ɵɵFactoryTarget.Component });
 ForestryTendersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.3", type: ForestryTendersComponent, selector: "YaaranutGis-ForestryTenders", inputs: { ForestryTenders: "ForestryTenders" }, outputs: { mapLoaded: "mapLoaded" }, viewQueries: [{ propertyName: "content", first: true, predicate: ["mapViewForestryTenders"], descendants: true, static: true }], ngImport: i0, template: `
-    <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:white"></div>
+    <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:green"></div>
   `, isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.3", ngImport: i0, type: ForestryTendersComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'YaaranutGis-ForestryTenders',
                     template: `
-    <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:white"></div>
+    <div #mapViewForestryTenders style="width:100%;height: 100%;background-color:green"></div>
   `,
                     styles: []
                 }]
