@@ -513,14 +513,14 @@
                         this.featerLayer.opacity = 0.5;
                         this.featerLayer.definitionExpression = "1=2";
                         featerRenderer = new SimpleRenderer__default['default']();
-                        featerRenderer.label = "{FOR_NO}";
+                        featerRenderer.label = "{trtUnit}";
                         polygonsSimpleFillSymbol = new symbols.SimpleFillSymbol();
                         polygonsSimpleFillSymbol.color = Color__default['default'].fromString("green");
                         polygonsSimpleFillSymbol.outline.color = Color__default['default'].fromString("blue");
                         polygonsSimpleFillSymbol.outline.width = 2;
                         featerRenderer.symbol = polygonsSimpleFillSymbol;
                         labelClass = new LabelClass__default['default']();
-                        labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                        labelClass.labelExpressionInfo = { expression: "$feature.trtUnit  " };
                         this.featerLayer.labelingInfo = [labelClass];
                         this.featerLayer.renderer = featerRenderer;
                         webMap.add(this.featerLayer);

@@ -157,14 +157,14 @@ class WorkUnitComponent {
                 //this.featerLayer.outFields = ["FOR_NO"];
                 //this.featerLayer.popupEnabled = true;
                 const featerRenderer = new SimpleRenderer();
-                featerRenderer.label = "{FOR_NO}";
+                featerRenderer.label = "{trtUnit}";
                 const polygonsSimpleFillSymbol = new SimpleFillSymbol();
                 polygonsSimpleFillSymbol.color = Color.fromString("green");
                 polygonsSimpleFillSymbol.outline.color = Color.fromString("blue");
                 polygonsSimpleFillSymbol.outline.width = 2;
                 featerRenderer.symbol = polygonsSimpleFillSymbol;
                 const labelClass = new LabelClass();
-                labelClass.labelExpressionInfo = { expression: "$feature.FOR_NO  " };
+                labelClass.labelExpressionInfo = { expression: "$feature.trtUnit  " };
                 this.featerLayer.labelingInfo = [labelClass];
                 this.featerLayer.renderer = featerRenderer;
                 webMap.add(this.featerLayer);
