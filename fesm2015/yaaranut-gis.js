@@ -80,7 +80,7 @@ class WorkUnitComponent {
         this.mapLoaded = new EventEmitter();
         this._workUnits = [];
         this.firstTime = true;
-        this._z = "z";
+        this._z = "zz";
         this.featerLayer = new FeatureLayer();
         this.mapView = new MapView();
     }

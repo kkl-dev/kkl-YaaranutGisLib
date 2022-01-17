@@ -426,7 +426,7 @@
             this.mapLoaded = new i0.EventEmitter();
             this._workUnits = [];
             this.firstTime = true;
-            this._z = "z";
+            this._z = "zz";
             this.featerLayer = new FeatureLayer__default['default']();
             this.mapView = new MapView__default['default']();
         }
