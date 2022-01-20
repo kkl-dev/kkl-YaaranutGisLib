@@ -35,7 +35,7 @@ const environmentTest = {
 
 const environmentProd = {
     production: true,
-    apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
+    apiUrl: 'http://kkl-apiprod:8001',
 };
 
 class YaaranutService {
