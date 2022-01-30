@@ -1,5 +1,5 @@
 import * as i0 from '@angular/core';
-import { isDevMode, Injectable, Optional, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { isDevMode, Injectable, Inject, Optional, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import * as i1 from '@angular/core/testing';
 import WebMap from '@arcgis/core/WebMap';
 import MapView from '@arcgis/core/views/MapView';
@@ -39,8 +39,10 @@ const environmentProd = {
 };
 
 class YaaranutService {
-    constructor(testBed) {
+    constructor(config, testBed) {
+        this.config = config;
         this.apiUrl = "";
+        const az = config;
         if (isDevMode()) {
             this.apiUrl = environment.apiUrl;
             this.apiUrl = environmentTest.apiUrl;
@@ -53,11 +55,14 @@ class YaaranutService {
         }
     }
 }
-YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: i1.TestBed, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: 'config' }, { token: i1.TestBed, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
 YaaranutService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: i1.TestBed, decorators: [{
+        }], ctorParameters: function () { return [{ type: undefined, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: i1.TestBed, decorators: [{
                     type: Optional
                 }] }]; } });
 
