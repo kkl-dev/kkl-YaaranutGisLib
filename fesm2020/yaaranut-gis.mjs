@@ -53,6 +53,7 @@ class YaaranutService {
         else {
             this.apiUrl = environmentProd.apiUrl;
         }
+        this.apiUrl = config.GisApiUrl;
     }
 }
 YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: 'config' }, { token: i1.TestBed, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
