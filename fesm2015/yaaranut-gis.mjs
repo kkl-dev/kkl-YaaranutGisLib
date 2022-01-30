@@ -211,6 +211,15 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImpor
             }] } });
 
 class WorkUnitModule {
+    foraaa() {
+    }
+    static forRoot(environment) {
+        console.log(environment);
+        return {
+            ngModule: WorkUnitModule,
+            providers: [YaaranutService, { provide: 'config', useValue: environment }]
+        };
+    }
 }
 WorkUnitModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: WorkUnitModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 WorkUnitModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: WorkUnitModule, declarations: [WorkUnitComponent], imports: [FormsModule,
