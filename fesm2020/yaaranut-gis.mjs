@@ -1,6 +1,5 @@
 import * as i0 from '@angular/core';
-import { isDevMode, Injectable, Inject, Optional, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import * as i1 from '@angular/core/testing';
+import { Injectable, Inject, EventEmitter, Component, ViewChild, Output, Input, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import WebMap from '@arcgis/core/WebMap';
 import MapView from '@arcgis/core/views/MapView';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
@@ -12,59 +11,20 @@ import SimpleRenderer from '@arcgis/core/renderers/SimpleRenderer';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-const environment = {
-    production: false,
-    apiUrl: 'http://localhost:27552',
-};
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
-
-const environmentTest = {
-    production: false,
-    apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
-};
-
-const environmentProd = {
-    production: true,
-    apiUrl: 'https://kkl-yaaranutgisapi.azurewebsites.net',
-};
-
 class YaaranutService {
-    constructor(config, testBed) {
+    constructor(config) {
         this.config = config;
         this.apiUrl = "";
-        const az = config;
-        if (isDevMode()) {
-            this.apiUrl = environment.apiUrl;
-            this.apiUrl = environmentTest.apiUrl;
-        }
-        else if (testBed !== null) {
-            this.apiUrl = environmentTest.apiUrl;
-        }
-        else {
-            this.apiUrl = environmentProd.apiUrl;
-        }
         this.apiUrl = config.GisApiUrl;
     }
 }
-YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: 'config' }, { token: i1.TestBed, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: 'environmentFile' }], target: i0.ɵɵFactoryTarget.Injectable });
 YaaranutService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: undefined, decorators: [{
                     type: Inject,
-                    args: ['config']
-                }] }, { type: i1.TestBed, decorators: [{
-                    type: Optional
+                    args: ['environmentFile']
                 }] }]; } });
 
 class WorkUnitService {
@@ -212,13 +172,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImpor
             }] } });
 
 class WorkUnitModule {
-    foraaa() {
-    }
     static forRoot(environment) {
-        console.log(environment);
         return {
             ngModule: WorkUnitModule,
-            providers: [YaaranutService, { provide: 'config', useValue: environment }]
+            providers: [YaaranutService, { provide: 'environmentFile', useValue: environment }]
         };
     }
 }
@@ -385,6 +342,12 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImpor
             }] } });
 
 class SeedsCollectModule {
+    static forRoot(environment) {
+        return {
+            ngModule: SeedsCollectModule,
+            providers: [YaaranutService, { provide: 'environmentFile', useValue: environment }]
+        };
+    }
 }
 SeedsCollectModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: SeedsCollectModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 SeedsCollectModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: SeedsCollectModule, declarations: [SeedsCollectComponent], imports: [FormsModule,
@@ -525,6 +488,12 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.1.2", ngImpor
             }] } });
 
 class ForestryTendersModule {
+    static forRoot(environment) {
+        return {
+            ngModule: ForestryTendersModule,
+            providers: [YaaranutService, { provide: 'environmentFile', useValue: environment }]
+        };
+    }
 }
 ForestryTendersModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: ForestryTendersModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
 ForestryTendersModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: ForestryTendersModule, declarations: [ForestryTendersComponent], imports: [FormsModule,
