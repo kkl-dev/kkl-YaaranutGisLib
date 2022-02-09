@@ -16,7 +16,7 @@ class YaaranutService {
         this.config = config;
         this.apiUrl = "";
         this.apiUrl = config.GisApiUrl;
-        //this.apiUrl = 'https://kkl-yaaranutgisapi.azurewebsites.net';
+        this.apiUrl = 'https://kkl-yaaranutgisapi.azurewebsites.net';
     }
 }
 YaaranutService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.1.2", ngImport: i0, type: YaaranutService, deps: [{ token: 'environmentFile' }], target: i0.ɵɵFactoryTarget.Injectable });
